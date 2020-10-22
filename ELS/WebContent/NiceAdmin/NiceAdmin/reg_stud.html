@@ -9,31 +9,27 @@
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
   <script type="text/javascript">
-  function validateform(){  
-	  
-		  var fname=document.regform.fname.value;
-		  var lname=document.regform.lname.value;
-		  var letters = /^[A-Za-z]+$/;
-		  if((fname.match(letters))
-	      { 
-	      return true;
-	      }
-	      else
-	      {
-	    	  document.getElementById("fnameloc").innerHTML="Enter alphabets only";
-	      return false;
-	      }
-		  if((lname.match(letters))
-	      { 
-	      return true;
-	      }
-	      else
-	      {
-	    	  document.getElementById("lnameloc").innerHTML="Enter alphabets only";
-	      return false;
-	      }
-		  
+  function validateform(){
+	  var fname = document.regform.fname.value;
+	  var lname = document.regform.lname.value;
+	  var letters = /^[A-Za-z]+$/;
+	  if(!fname.match(letters) || fname.length<=3)
+	     {
+	      alert("Enter valid characters of minimum length 4");
+	      status = false;
+	     }
+	  else if(!lname.match(letters) || lname.length<=3)
+	     {
+		  alert("Enter valid characters of minimum length 4");
+	      status = false;
+	     }
+	  else
+	     {
+		   status = true;
+	     }
   }
+		  
+  
  </script>
 
   <title>Student Registration</title>
@@ -47,7 +43,7 @@
   <link href="css/elegant-icons-style.css" rel="stylesheet" />
   <link href="css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet" />
 
  
@@ -64,17 +60,19 @@
         <span id="lengthloc"></span>
         <div class="input-group">
          <span class="input-group-addon"><b>First name: </b><i class="icon_profile"></i></span>
-         <input type="text" class="form-control" id="fname" placeholder="First name" name="fname" autofocus required> 
+         <input type="text" class="form-control" id="fname" placeholder="First name" name="fname" autofocus required>
+         
          
         </div>
-         <span id="fnameloc"></span>
+        <span class="pull-right" color="red" id="fnameloc"></span>
+         
         
         <div class="input-group">
      
           <span class="input-group-addon"><b>Last name: </b><i class="icon_profile"></i></span>
          <input type="text" class="form-control" id="lname" placeholder="Last name" name="lname" autofocus required>
         </div> 
-        <span id="lnameloc"></span>
+        <span class="pull-right" id="lnameloc"></span>
         <div class="input-group">
      
           <span class="input-group-addon"><b>Student_id: </b><i class="icon_profile"></i></span>
