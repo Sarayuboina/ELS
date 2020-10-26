@@ -1,8 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
@@ -23,12 +24,10 @@
   <link href="css/style-responsive.css" rel="stylesheet" />
 
 </head>
-
 <body class="login-img3-body">
+ <div class="container">
 
-  <div class="container">
-
-    <form class="login-form" action="LoginServlet.java" method="post">
+    <form class="login-form" action="<%=request.getContextPath()%>/src/com/controller/LoginServlet.java" method="post">
       <div class="login-wrap">
         <p class="login-img"><i class="icon_lock_alt"></i></p>
         <div class="input-group">
@@ -59,6 +58,6 @@
   </div>
 
 
-</body>
 
+</body>
 </html>
