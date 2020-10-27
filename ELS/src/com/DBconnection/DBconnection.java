@@ -10,7 +10,7 @@ public class DBconnection {
     Connection con = null;
     String url = "jdbc:mysql://localhost:3306/e_learning_system";
     String username = "root";
-    String password = "root";
+    String password = "";
  
     try
     {
