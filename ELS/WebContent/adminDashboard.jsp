@@ -197,7 +197,7 @@
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box brown-bg">
-              <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+              <i class="fas fa-user-tie" aria-hidden="true"></i>
              
               <div class="title">Lecturers</div>
                <div class="count">7</div>
