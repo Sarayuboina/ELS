@@ -45,7 +45,7 @@
 </head>
 <body class="login-img3-body">
 <div class="text-center">
-<span style="color:red"><h2 bgcolor="green"><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></h2></span>
+
  <div class="container">
 
     <form class="login-form" action="<%=request.getContextPath()%>/LoginServlet" method="post" onsubmit="validateform()">
@@ -65,6 +65,7 @@
                 <input type="checkbox" value="remember-me"> Remember me
                 <span class="pull-right"> <a href="ForgotPassword.html"> Forgot Password?</a></span>
             </label>
+         <span style="color:red"><h4 bgcolor="green"><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></h4></span>
          
         <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button></br>
         <span class="pull-center"><a href="signup.html" class="btn btn-info btn-lg btn-block" type="submit">Signup</span></a>
