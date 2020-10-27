@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
 	            session.setAttribute("Admin", login_id); //setting session attribute
 	            request.setAttribute("userName", login_id);
 	 
-	            request.getRequestDispatcher("/adminDashboard.html").forward(request, response);
+	            request.getRequestDispatcher("/adminDashboard.jsp").forward(request, response);
 	        }
 	        else if(userValidate.equals("Editor_Role"))
 	        {

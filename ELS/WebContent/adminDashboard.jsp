@@ -46,7 +46,7 @@
       </div>
 
       <!--logo start-->
-      <a href="adminDashboard.html" class="logo"> <span class="lite">Welcome Admin!<%=request.getAttribute("login_id") %></span></a>
+      <a href="adminDashboard.html" class="logo"> <span class="lite">Welcome Admin!<%=request.getAttribute("userName") %></span></a>
       <!--logo end-->
 
         
@@ -71,7 +71,7 @@
                 <a href=""><i class="icon_profile"></i> My Profile</a>
               </li>
              <li>
-                <a href=""><i class="icon_key_alt"></i> Log Out</a>
+                <a href="<%=request.getContextPath()%>/LogoutServlet"><i class="icon_key_alt"></i> Log Out</a>
               </li>
               <li>
                 <a href=""><i class="icon_key_alt"></i> Documentation</a>

@@ -25,9 +25,11 @@
 
 </head>
 <body class="login-img3-body">
+<div class="text-center">
+<span style="color:red"><h2 bgcolor="green"><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></h2></span>
  <div class="container">
 
-    <form class="login-form" action="<%=request.getContextPath()%>/src/com/controller/LoginServlet.java" method="post">
+    <form class="login-form" action="<%=request.getContextPath()%>/LoginServlet" method="post">
       <div class="login-wrap">
         <p class="login-img"><i class="icon_lock_alt"></i></p>
         <div class="input-group">
@@ -44,6 +46,7 @@
                 <input type="checkbox" value="remember-me"> Remember me
                 <span class="pull-right"> <a href="ForgotPassword.html"> Forgot Password?</a></span>
             </label>
+         
         <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button></br>
         <span class="pull-center"><a href="signup.html" class="btn btn-info btn-lg btn-block" type="submit">Signup</span></a>
         </div>
