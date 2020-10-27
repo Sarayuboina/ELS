@@ -5,8 +5,27 @@
 <head>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
+  <script type="text/javascript">
+  function validateform(){
+	  var uname = document.regform.uname.value;
+	  var pwd = document.regform.pwd.value;
+	  var letters = /^[A-Za-z]+$/;
+	  if(!uname.match(letters) || uname=="" || uname==null)
+	     {
+	      alert("Enter valid username");
+	      status = false;
+	     }
+	  else if(!lname.match(letters) || lname.length<=3)
+	     {
+		  alert("Enter valid characters of minimum length 4");
+	      status = false;
+	     }
+	  else
+	     {
+		   status = true;
+	     }
+  }
+  </script>
   
 
   <title>ELS Login</title>
@@ -29,7 +48,7 @@
 <span style="color:red"><h2 bgcolor="green"><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></h2></span>
  <div class="container">
 
-    <form class="login-form" action="<%=request.getContextPath()%>/LoginServlet" method="post">
+    <form class="login-form" action="<%=request.getContextPath()%>/LoginServlet" method="post" onsubmit="validateform()">
       <div class="login-wrap">
         <p class="login-img"><i class="icon_lock_alt"></i></p>
         <div class="input-group">

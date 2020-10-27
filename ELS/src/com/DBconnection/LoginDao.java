@@ -36,9 +36,9 @@ public class LoginDao {
 	            if(login_id==login_idDB && password.equals(passwordDB) && roleDB==1)
 	            return "Admin_Role";
 	            else if(login_id==login_idDB && password.equals(passwordDB) && roleDB==2)
-	            return "Editor_Role";
+	            return "Lecturer_Role";
 	            else if(login_id==login_idDB && password.equals(passwordDB) && roleDB==3)
-	            return "User_Role";
+	            return "Student_Role";
 	        }
 	    }
 	    catch(SQLException e)
