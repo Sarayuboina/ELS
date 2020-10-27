@@ -71,7 +71,7 @@
                 <a href=""><i class="icon_profile"></i> My Profile</a>
               </li>
              <li>
-                <a href="<%=request.getContextPath()%>/LogoutServlet"><i class="icon_key_alt"></i> Log Out</a>
+                <a href="<%=request.getContextPath()%>/LogoutServlet"><i class="fa fa-sign-out"></i> Log Out</a>
               </li>
               <li>
                 <a href=""><i class="icon_key_alt"></i> Documentation</a>
@@ -104,14 +104,14 @@
           </li>
           <li >
             <a href="#" class="">
-                          <i class="icon_desktop"></i>
+                          <i class="icon_book_alt"></i>
                           <span>Subjects</span>
                           
                       </a>
             </li>
           <li>
             <a class="#" href="">
-                          <i class="icon_genius"></i>
+                          <i class="icon_profile"></i>
                           <span>Lecturers</span>
                       </a>
           </li>
@@ -126,7 +126,7 @@
 
           <li>
             <a href="#" class="">
-                          <i class="icon_table"></i>
+                          <i class="fa fa-graduation-cap"></i>
                           <span>Students</span>
                           
                       </a>
@@ -134,7 +134,7 @@
 
           <li>
             <a href="javascript:;" class="">
-                          <i class="icon_documents_alt"></i>
+                          <i class="icon_chat_alt"></i>
                           <span>Evaluations</span>
                           
                       </a>
@@ -143,19 +143,19 @@
 
           <li>
             <a class="" href="admindashboard.html">
-                          <i class="icon_house_alt"></i>
+                          <i class="fa fa-users"></i>
                           <span>Users</span>
                       </a>
           </li>
           <li >
             <a href="" class="">
-                          <i class="icon_document_alt"></i>
+                          <i class="icon_key_alt"></i>
                           <span>Change password</span>
                       </a>
           </li>
           <li >
             <a href="" class="">
-                          <i class="icon_desktop"></i>
+                          <i class="fa fa-sign-out"></i>
                           <span>Logout</span>
                           
                       </a>
@@ -197,7 +197,7 @@
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box brown-bg">
-              <i class="fa fa-shopping-cart"></i>
+              <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
              
               <div class="title">Lecturers</div>
                <div class="count">7</div>
@@ -208,7 +208,7 @@
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box dark-bg">
-              <i class="fa fa-thumbs-o-up"></i>
+              <i class="fa fa-graduation-cap" aria-hidden="true"></i>
              
               <div class="title">Students</div>
                <div class="count">4</div>
@@ -219,7 +219,7 @@
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box green-bg">
-              <i class="fa fa-cubes"></i>
+              <i class="fa fa-users" aria-hidden="true"></i>
               
               <div class="title">Registered Users</div>
               <div class="count">4</div>
