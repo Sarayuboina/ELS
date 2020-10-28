@@ -16,6 +16,7 @@
 	  if(!fname.match(letters) || fname.length<=3)
 	     {
 	      alert("Enter valid characters of minimum length 4");
+<<<<<<< HEAD
 	      return false;
 	     }
 	  else if(!lname.match(letters) || lname.length<=3)
@@ -77,6 +78,69 @@
      
           <span class="input-group-addon"><b>Last name: </b><i class="icon_profile"></i></span>
          <input type="text" class="form-control" id="sid" placeholder="Last name" name="lname" autofocus required>
+=======
+	      status = false;
+	     }
+	  else if(!lname.match(letters) || lname.length<=3)
+	     {
+		  alert("Enter valid characters of minimum length 4");
+	      status = false;
+	     }
+	  else
+	     {
+		   status = true;
+	     }
+  }
+		  
+  
+ </script>
+
+  <title>Student Registration</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- bootstrap theme -->
+  <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <!--external css-->
+  <!-- font icon -->
+  <link href="css/elegant-icons-style.css" rel="stylesheet" />
+  <link href="css/font-awesome.css" rel="stylesheet" />
+  <!-- Custom styles -->
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet" />
+
+ 
+</head>
+
+<body class="login-img3-body">
+
+  <div class="container">
+
+    <form  name="regform" class="login-form" action="#" onsubmit="return validateform()">
+      <div class="login-wrap">
+       <div class="text-center">
+        <p class="login-img"><i class="icon_pencil_alt"></i><h2><b><i>Register here</i></b></h2></p>
+        <span id="lengthloc"></span>
+        <div class="input-group">
+         <span class="input-group-addon"><b>First name: </b><i class="icon_profile"></i></span>
+         <input type="text" class="form-control" id="fname" placeholder="First name" name="fname" autofocus required>
+         
+         
+        </div>
+        <span class="pull-right" color="red" id="fnameloc"></span>
+         
+        
+        <div class="input-group">
+     
+          <span class="input-group-addon"><b>Last name: </b><i class="icon_profile"></i></span>
+         <input type="text" class="form-control" id="lname" placeholder="Last name" name="lname" autofocus required>
+        </div> 
+        <span class="pull-right" id="lnameloc"></span>
+        <div class="input-group">
+     
+          <span class="input-group-addon"><b>Student_id: </b><i class="icon_profile"></i></span>
+         <input type="text" class="form-control" id="sid" placeholder="Enter your id here" name="sid" autofocus required>
+>>>>>>> branch 'master' of https://github.com/Sarayuboina/ELS.git
         </div>
         <div class="input-group">
           <span class="input-group-addon"><b>Personal mail_id: </b><i class="icon_mail"></i></span>
