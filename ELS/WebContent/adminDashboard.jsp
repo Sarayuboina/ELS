@@ -148,7 +148,7 @@
                       </a>
           </li>
           <li >
-            <a href="" class="">
+            <a href="resetpwd.html" class="">
                           <i class="icon_key_alt"></i>
                           <span>Change password</span>
                       </a>
