@@ -153,11 +153,45 @@
                       </a>
             </li>
           <li>
-            <a class="resetpwd.html" href="#">
+            <a class="resetpwd.html" href="#" data-toggle="modal" data-target="#myModal">
                           <i class=" icon_key"></i>
                           <span>Change Password</span>
                       </a>
+              <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+         <div class="container">
+         <form  name="passform" class="login-form" action="index.html" onsubmit="return validateform()">
+      <div class="login-wrap">
+      <div class="text-center">
+        <p class="login-img"><i class="icon_lock-open"></i><h3><b><i>Reset Password!!!</i></b></h3></p>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+         <input type="password" class="form-control" id="npwd" placeholder="New Password" name="npwd"  required>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+         <input type="password" class="form-control" id="cpwd" placeholder="Confirm Password" name="cpwd"  required>
+        </div>
+       <button class="btn btn-primary btn-lg btn-block" type="submit">Confirm</button></br>
+        </div>
+        </div>
+        </form>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+                      
           </li> 
+          
           <li>
             <a class="" href="#">
                           <i class="fa fa-sign-out"></i>
