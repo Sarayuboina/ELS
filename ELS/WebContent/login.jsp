@@ -57,18 +57,18 @@
          <input type="text" class="form-control" id="uname" placeholder="Username" name="uname" autofocus required>
         </div>
         <div class="input-group">
-          <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+          <span class="input-group-addon" style="color:blue"><i class="icon_key_alt"></i></span>
           <input type="password" class="form-control" id="pwd" placeholder="Password" name="pwd" required>
         </div>
         
         <label class="checkbox">
                 <input type="checkbox" value="remember-me"> Remember me
-                <span class="pull-right"> <a href="ForgotPassword.html"> Forgot Password?</a></span>
+                <span class="pull-right" style="color:blue"> <a href="ForgotPassword.html" > Forgot Password?</a></span>
             </label>
          <span style="color:red"><h4 bgcolor="green"><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></h4></span>
          
         <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button></br>
-        <span class="pull-center"><a href="signup.html" class="btn btn-info btn-lg btn-block" type="submit">Signup</span></a>
+        <span class="pull-center"><a href="signup.html" class="btn btn-info btn-lg btn-block" type="submit">Signup</a></span>
         </div>
         </form>
     <div class="text-right">
@@ -80,7 +80,7 @@
     </div>
   </div>
 
-
+</div>
 
 </body>
 </html>
