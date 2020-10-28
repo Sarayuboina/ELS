@@ -16,16 +16,16 @@
 	  if(!fname.match(letters) || fname.length<=3)
 	     {
 	      alert("Enter valid characters of minimum length 4");
-	      status = false;
+	      return false;
 	     }
 	  else if(!lname.match(letters) || lname.length<=3)
 	     {
 		  alert("Enter valid characters of minimum length 4");
-	      status = false;
+	      return false;
 	     }
 	  else
 	     {
-		   status = true;
+		   return true;
 	     }
   }
 		  
@@ -53,7 +53,7 @@
 
   <div class="container">
 
-    <form  name="regform" class="login-form" action="#" onsubmit="return validateform()">
+    <form  name="regform" class="login-form" action="login.html" onsubmit="return validateform()">
       <div class="login-wrap">
        <div class="text-center">
         <p class="login-img"><i class="icon_pencil_alt"></i><h2><b><i>Register here</i></b></h2></p>

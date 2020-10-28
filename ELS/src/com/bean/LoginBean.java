@@ -1,13 +1,13 @@
 package com.bean;
 
 public class LoginBean {
- private int login_id;
+ private String user_id;
  private String password;
-public int getLogin_id() {
-	return login_id;
+public String getUser_id() {
+	return user_id;
 }
-public void setLogin_id(int login_id) {
-	this.login_id = login_id;
+public void setUser_id(String user_id) {
+	this.user_id = user_id;
 }
 public String getPassword() {
 	return password;
@@ -16,4 +16,7 @@ public void setPassword(String password) {
 	this.password = password;
 }
  
+
 }
+ 
+

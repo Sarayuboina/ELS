@@ -10,14 +10,14 @@ import com.bean.LoginBean;
 public class LoginDao {
 	public String authenticateUser(LoginBean loginBean)
 	{
-	    int login_id = loginBean.getLogin_id();
+	    String user_id = loginBean.getUser_id();
 	    String password = loginBean.getPassword();
 	 
 	    Connection con = null;
 	    Statement statement = null;
 	    ResultSet resultSet = null;
 	 
-	    int login_idDB;
+	    String user_idDB;
 	    String passwordDB = "";
 	    int roleDB;
 	 
@@ -29,15 +29,15 @@ public class LoginDao {
 	 
 	        while(resultSet.next())
 	        {
-	            login_idDB = resultSet.getInt("login_id");
+	            user_idDB = resultSet.getString("user_id");
 	            passwordDB = resultSet.getString("password");
 	            roleDB = resultSet.getInt("role_id");
 	 
-	            if(login_id==login_idDB && password.equals(passwordDB) && roleDB==1)
+	            if(user_id.equals(user_idDB) && password.equals(passwordDB) && roleDB==1)
 	            return "Admin_Role";
-	            else if(login_id==login_idDB && password.equals(passwordDB) && roleDB==2)
+	            else if(user_id.equals(user_idDB) && password.equals(passwordDB) && roleDB==2)
 	            return "Lecturer_Role";
-	            else if(login_id==login_idDB && password.equals(passwordDB) && roleDB==3)
+	            else if(user_id.equals(user_idDB) && password.equals(passwordDB) && roleDB==3)
 	            return "Student_Role";
 	        }
 	    }

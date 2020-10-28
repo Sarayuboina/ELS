@@ -23,12 +23,12 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String id = request.getParameter("uname");
+		String user_id = request.getParameter("uname");
 	    String password = request.getParameter("pwd");
-	    int login_id=Integer.parseInt(id);
+	    
 	 
 	    LoginBean loginBean = new LoginBean();
-	    loginBean.setLogin_id(login_id);
+	    loginBean.setUser_id(user_id);
 	    loginBean.setPassword(password);
         LoginDao loginDao = new LoginDao();
 	 
@@ -41,8 +41,8 @@ public class LoginServlet extends HttpServlet {
 	            System.out.println("Admin's Home");
 	 
 	            HttpSession session = request.getSession(); //Creating a session
-	            session.setAttribute("Admin", login_id); //setting session attribute
-	            request.setAttribute("userName", login_id);
+	            session.setAttribute("Admin", user_id); //setting session attribute
+	            request.setAttribute("userName", user_id);
 	 
 	            request.getRequestDispatcher("/adminDashboard.jsp").forward(request, response);
 	        }
@@ -51,8 +51,8 @@ public class LoginServlet extends HttpServlet {
 	            System.out.println("Editor's Home");
 	 
 	            HttpSession session = request.getSession();
-	            session.setAttribute("Editor", login_id);
-	            request.setAttribute("userName", login_id);
+	            session.setAttribute("Editor", user_id);
+	            request.setAttribute("userName", user_id);
 	 
 	            request.getRequestDispatcher("/JSP/Editor.jsp").forward(request, response);
 	        }
@@ -62,8 +62,8 @@ public class LoginServlet extends HttpServlet {
 	 
 	            HttpSession session = request.getSession();
 	            session.setMaxInactiveInterval(10*60);
-	            session.setAttribute("User", login_id);
-	            request.setAttribute("userName", login_id);
+	            session.setAttribute("User", user_id);
+	            request.setAttribute("userName", user_id);
 	 
 	            request.getRequestDispatcher("/JSP/User.jsp").forward(request, response);
 	        }

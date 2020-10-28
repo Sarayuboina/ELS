@@ -7,33 +7,43 @@
   <meta name="author" content="GeeksLabs">
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
-  <script type="text/javascript">
-  function validateform(){  
-	  
-		  var fname=document.regform.fname.value;
-		  var lname=document.regform.lname.value;
-		  var letters = /^[A-Za-z]+$/;
-		  if((fname.match(letters))
-	      { 
-	      return true;
-	      }
-	      else
-	      {
-	    	  document.getElementById("fnameloc").innerHTML="Enter alphabets only";
-	      return false;
-	      }
-		  if((lname.match(letters))
-	      { 
-	      return true;
-	      }
-	      else
-	      {
-	    	  document.getElementById("lnameloc").innerHTML="Enter alphabets only";
-	      return false;
-	      }
-		  
-  }
- </script>
+  <script language="javascript">
+    function passwordChanged() {
+        var strength = document.getElementById('strength');
+        var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+        var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+        var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+        var npwd = document.getElementById('npwd');
+        if (npwd.value.length == 0 ) {
+            strength.innerHTML = 'Type Password';
+        } else if (false == enoughRegex.test(npwd.value)) {
+            strength.innerHTML = 'More Characters';
+        } else if (strongRegex.test(npwd.value)) {
+            strength.innerHTML = '<span style="color:green">Strong!</span>';
+        } else if (mediumRegex.test(npwd.value)) {
+            strength.innerHTML = '<span style="color:orange">Medium!</span>';
+        } else {
+            strength.innerHTML = '<span style="color:red">Weak!</span>';
+        }
+    }
+</script>
+<script language="javascript">
+ function pwdvalid(){
+	 var npwd=document.passform.npwd.value;
+	 var cpwd=document.passform.cpwd.value;
+	 if(npwd.length < 6){
+		 alert("Minimum length should be of 6 characters");
+		 return false;
+	 }
+	 else if(npwd != cpwd){
+		 alert("Password mismatched");
+		 return false;
+	 }
+	 else{
+		 return true;
+	 }
+	 
+ }</script>
   <title>Forgot Password?</title>
 
   <!-- Bootstrap CSS -->
@@ -55,18 +65,25 @@
 
   <div class="container">
 
-    <form  name="passform" class="login-form" action="index.html" onsubmit="return validateform()">
+    <form  name="passform" class="login-form" action="login.html" onkeyup="return passwordChanged()" onsubmit=" return pwdvalid()">
       <div class="login-wrap">
       <div class="text-center">
-        <p class="login-img"><i class="icon_lock-open"></i><h3><b><i>Reset Password</i></b></h3></p>
+        <p class="login-img"><i class="icon_lock-open"></i><h3><b><i>Change Password</i></b></h3></p>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+         <input type="password" class="form-control" id="opwd" placeholder="Old Password" name="opwd"  required>
+        </div>
         <div class="input-group">
           <span class="input-group-addon"><i class="icon_key_alt"></i></span>
          <input type="password" class="form-control" id="npwd" placeholder="New Password" name="npwd"  required>
         </div>
+        <span id="strength"><h5 style="color:blue">Type Password</h5></span>
         <div class="input-group">
           <span class="input-group-addon"><i class="icon_key_alt"></i></span>
          <input type="password" class="form-control" id="cpwd" placeholder="Confirm Password" name="cpwd"  required>
         </div>
+        
+         
        <button class="btn btn-primary btn-lg btn-block" type="submit">Confirm</button></br>
         </div>
         </div>

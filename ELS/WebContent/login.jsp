@@ -7,23 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="text/javascript">
   function validateform(){
-	  var uname = document.regform.uname.value;
+	  var uname = document.logform.uname.value;
 	  var pwd = document.regform.pwd.value;
-	  var letters = /^[A-Za-z]+$/;
-	  if(!uname.match(letters) || uname=="" || uname==null)
-	     {
-	      alert("Enter valid username");
-	      status = false;
-	     }
-	  else if(!lname.match(letters) || lname.length<=3)
-	     {
-		  alert("Enter valid characters of minimum length 4");
-	      status = false;
-	     }
-	  else
-	     {
-		   status = true;
-	     }
+	  atpos = uname.indexOf("@");
+      dotpos = uname.lastIndexOf(".");
+      if (atpos < 1 || ( dotpos - atpos < 2 )) {
+         alert("Please enter correct username");
+         status false;
+      }
+      else{
+         status true ;
+      }
   }
   </script>
   
@@ -48,13 +42,13 @@
 
  <div class="container">
 
-    <form class="login-form" action="<%=request.getContextPath()%>/LoginServlet" method="post" onsubmit="validateform()">
+    <form name="logform" class="login-form" action="<%=request.getContextPath()%>/LoginServlet" method="post" onsubmit="validateform()">
       <div class="login-wrap">
         <p class="login-img"><i class="icon_lock_alt"></i></p>
         <div class="input-group">
      
           <span class="input-group-addon"><i class="icon_profile"></i></span>
-         <input type="text" class="form-control" id="uname" placeholder="Username" name="uname" autofocus required>
+         <input type="email" class="form-control" id="uname" placeholder="Username" name="uname" autofocus required>
         </div>
         <div class="input-group">
           <span class="input-group-addon"><i class="icon_key_alt"></i></span>
@@ -63,7 +57,7 @@
         
         <label class="checkbox">
                 <input type="checkbox" value="remember-me"> Remember me
-                <span class="pull-right"> <a href="ForgotPassword.html"> Forgot Password?</a></span>
+                <span  class="pull-right"> <a  href="ForgotPassword.html"> Forgot Password?</a></span>
             </label>
          <span style="color:red"><h4 bgcolor="green"><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></h4></span>
          
