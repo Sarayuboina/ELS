@@ -46,26 +46,26 @@ public class LoginServlet extends HttpServlet {
 	 
 	            request.getRequestDispatcher("/adminDashboard.jsp").forward(request, response);
 	        }
-	        else if(userValidate.equals("Editor_Role"))
+	        else if(userValidate.equals("Lecturer_Role"))
 	        {
-	            System.out.println("Editor's Home");
+	            System.out.println("Lecturer's Home");
 	 
 	            HttpSession session = request.getSession();
-	            session.setAttribute("Editor", user_id);
+	            session.setAttribute("Lecturer", user_id);
 	            request.setAttribute("userName", user_id);
 	 
-	            request.getRequestDispatcher("/JSP/Editor.jsp").forward(request, response);
+	            request.getRequestDispatcher("/lecturer.jsp").forward(request, response);
 	        }
-	        else if(userValidate.equals("User_Role"))
+	        else if(userValidate.equals("Student_Role"))
 	        {
 	            System.out.println("User's Home");
 	 
 	            HttpSession session = request.getSession();
 	            session.setMaxInactiveInterval(10*60);
-	            session.setAttribute("User", user_id);
+	            session.setAttribute("Student", user_id);
 	            request.setAttribute("userName", user_id);
 	 
-	            request.getRequestDispatcher("/JSP/User.jsp").forward(request, response);
+	            request.getRequestDispatcher("/student.jsp").forward(request, response);
 	        }
 	        else
 	        {

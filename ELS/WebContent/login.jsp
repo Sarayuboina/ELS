@@ -56,12 +56,9 @@
         </div>
         
         <label class="checkbox">
-                <input type="checkbox" value="remember-me"> Remember me
-<<<<<<< HEAD
-                <span  class="pull-right"> <a  href="ForgotPassword.html"> Forgot Password?</a></span>
-=======
+                
                 <span class="pull-right" style="color:blue"> <a href="ForgotPassword.html" > Forgot Password?</a></span>
->>>>>>> branch 'master' of https://github.com/Sarayuboina/ELS.git
+
             </label>
          <span style="color:red"><h4 bgcolor="green"><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></h4></span>
          
