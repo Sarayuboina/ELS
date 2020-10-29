@@ -90,12 +90,12 @@
         <span class="pull-center"><a href="login.html"><button class="btn btn-primary btn-lg btn-block" type="submit">Register</button></a></span>
         </div>
         </form>
-    <!--  <div class="text-right">
+     <div class="text-right">
       <div class="credits">
           
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Designed by <a href="#">ELS</a>
         </div>
-    </div>-->
+    </div>
   </div>
 
 </body>

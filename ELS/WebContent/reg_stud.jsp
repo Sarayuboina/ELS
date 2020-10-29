@@ -13,6 +13,8 @@
   function validateform(){
 	  var fname = document.regform.fname.value;
 	  var lname = document.regform.lname.value;
+	  var pwd=document.regform.pwd.value;
+	  var mail_id=document
 	  var letters = /^[A-Za-z]+$/;
 	  if(!fname.match(letters) || fname.length<=3)
 	     {
@@ -92,13 +94,15 @@
         </div>
         <span class="pull-center"><a href="login.html"><button class="btn btn-primary btn-lg btn-block" type="submit">Register</button></a></span>
         </div>
+        </div>
         </form>
-    <!--  <div class="text-right">
+        
+      <div class="text-right">
       <div class="credits">
           
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Designed by <a href="#">ELS</a>
         </div>
-    </div>-->
+    </div>
   </div>
 
 </body>
