@@ -96,34 +96,13 @@
                           <span>Admin Dashboard</span>
                       </a>
           </li>
-          <li >
-            <a href="#" class="">
-                          <i class="icon_document_alt"></i>
-                          <span>Classes</span>
-                      </a>
-          </li>
-          <li >
-            <a href="#" class="">
-                          <i class="icon_book_alt"></i>
-                          <span>Subjects</span>
-                          
-                      </a>
-            </li>
           <li>
             <a class="#" href="">
                           <i class="icon_profile"></i>
                           <span>Lecturers</span>
                       </a>
           </li>
-          <li>
-            <a class="#" href="">
-                          <i class="icon_piechart"></i>
-                          <span>Assign Subjects</span>
-
-                      </a>
-
-          </li>
-
+          
           <li>
             <a href="#" class="">
                           <i class="fa fa-graduation-cap"></i>
@@ -132,15 +111,7 @@
                       </a>
             </li>
 
-          <li>
-            <a href="javascript:;" class="">
-                          <i class="icon_chat_alt"></i>
-                          <span>Evaluations</span>
-                          
-                      </a>
-            
-          </li>
-
+         
           <li>
             <a class="" href="admindashboard.html">
                           <i class="fa fa-users"></i>
