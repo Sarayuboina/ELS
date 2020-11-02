@@ -9,28 +9,63 @@
   <meta name="author" content="GeeksLabs">
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
-  <script type="text/javascript">
+  <script language="javascript">
+    function passwordChanged() {
+        var strength = document.getElementById('strength');
+        var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+        var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+        var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+        var pwd = document.getElementById('pwd');
+        if (pwd.value.length == 0 ) {
+            strength.innerHTML = 'Type Password';
+        } else if (false == enoughRegex.test(pwd.value)) {
+            strength.innerHTML = 'More Characters';
+        } else if (strongRegex.test(pwd.value)) {
+            strength.innerHTML = '<span style="color:green">Strong!</span>';
+        } else if (mediumRegex.test(pwd.value)) {
+            strength.innerHTML = '<span style="color:orange">Medium!</span>';
+        } else {
+            strength.innerHTML = '<span style="color:red">Weak!</span>';
+        }
+    }
+    </script>
+    
+    <script language="javascript">  
+   
   function validateform(){
+	  var uname = document.regform.uname.value;
 	  var fname = document.regform.fname.value;
 	  var lname = document.regform.lname.value;
 	  var pwd=document.regform.pwd.value;
-	  var mail_id=document
+	  var cpwd=document.regform.cpwd.value;
+	  var mail_id=document.regform.mail_id.value;
 	  var letters = /^[A-Za-z]+$/;
-	  if(!fname.match(letters) || fname.length<=3)
+	  if(uname == null || uname.match(" ") || uname.length<=5){
+		  alert("Enter username name of minimum 6");
+		  return false;
+	  }
+	  else if(!fname.match(letters))
 	     {
-	      alert("Enter valid characters of minimum length 4");
+	      alert("Enter valid characters");
 
 	      return false;
 	     }
 	  else if(!lname.match(letters) || lname.length<=3)
 	     {
-		  alert("Enter valid characters of minimum length 4");
+		  alert("Enter lastname valid characters of minimum length 4");
 	      return false;
 	     }
-	  else
-	     {
-		   return true;
-	     }
+	  else if(pwd.length < 6){
+		 alert("Minimum length should be of 6 characters");
+		 return false;
+	  }
+	  else if(pwd != cpwd){
+			 alert("Password mismatched in confirm password");
+			 return false;
+		 }
+	  else{
+			 return true;
+		 }
   }
 		  
   
@@ -55,7 +90,7 @@
 <span style="color:red"><h4 bgcolor="green"><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></h4></span>
 <div class="container">
 
-    <form  name="regform" class="login-form" action="<%=request.getContextPath()%>/RegStudServlet" method="post" onsubmit="return validateform()">
+    <form  name="regform" class="login-form" action="<%=request.getContextPath()%>/RegStudServlet" method="post" onkeyup="return passwordChanged()" onsubmit="return validateform()">
       <div class="login-wrap">
        <div class="text-center">
         <p class="login-img"><i class="icon_pencil_alt"></i><h2><b><i>Register here</i></b></h2></p>
@@ -88,6 +123,7 @@
           <span class="input-group-addon"><b>Password: </b><i class="icon_key_alt"></i></span>
           <input type="password" class="form-control" id="pwd" placeholder="Password" name="pwd" required>
         </div>
+        <span id="strength"><h5 style="color:blue">Type Password</h5></span>
         <div class="input-group">
           <span class="input-group-addon"><b> Confirm Password: </b><i class="icon_key_alt"></i></span>
           <input type="password" class="form-control" id="cpwd" placeholder=" Confirm Password" name="cpwd" required>
