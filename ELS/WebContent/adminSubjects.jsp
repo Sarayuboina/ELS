@@ -90,19 +90,19 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
-          <li class="active">
+          <li>
             <a class="" href="adminDashboard.jsp">
                           <i class="icon_house_alt"></i>
                           <span>Admin Dashboard</span>
                       </a>
           </li>
-          <li>
-            <a class="" href="adminStandard.jsp">
+          <li >
+            <a class="#" href="adminStandard.jsp">
                           <i class="icon_document_alt"></i>
                           <span>Classes</span>
                       </a>
           </li>
-          <li>
+          <li class="active">
             <a class="#" href="">
                           <i class="icon_book_alt"></i>
                           <span>Subjects</span>
@@ -153,60 +153,98 @@
         <!--overview start-->
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-laptop"></i>Admin Dashboard</h3>
+            <h3 class="page-header"><i class="icon_book"></i>Subject</h3>
             <ol class="breadcrumb">
               <li><i class="fa fa-home"></i><a href="admindashboard.html">Home</a></li>
-              <li><i class="fa fa-laptop"></i>Admin Dashboard</li>
+              <li><i class="icon_book"></i>Subject</li>
             </ol>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box blue-bg">
-              <i class="fa fa-cloud-download"></i>
-          
-              <div class="title">Upload materials</div>
-              <div class="count">4</div>
-            </div>
-            <!--/.info-box-->
-          </div>
           <!--/.col-->
+       <div class="row">
+                <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box brown-bg">
-              <i class="fas fa-user-tie" aria-hidden="true"></i>
-             
-              <div class="title">Lecturers</div>
-               <div class="count">7</div>
-            </div>
-            <!--/.info-box-->
+                
+                    <div class="container text-left">
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                     Add Subject
+                    </button>
+                    
+                       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                         
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                     </div>
+                                     <div class="modal-body">
+                                       <form action="<%=request.getContextPath()%>/SaveStandard" method="post">
+                                            <div class="input-group">
+                                             <span class="input-group-addon"><b>Subject Name: </b><i class="icon_document_alt"></i></span>
+                                               <input type="text" class="form-control" id="subname" placeholder="subject name" name="subname" autofocus required>
+                                            </div>
+                                       </form>
+                                          
+
+                        <!-- <a href="<%=request.getContextPath()%>/new"  class="btn btn-success">Add
+     Standard</a>&nbsp;-->
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+                    <br>
+        <div class="col-sm-9">
+            <section class="panel">
+              <header class="panel-heading">
+                List of Subjects
+              </header>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Subject_id</th>
+                    <th>Subject_name</th>
+                    <th>operation</th>
+                    
+                  </tr>
+                </thead>
+        
+            </section>
           </div>
-          <!--/.col-->
+                     <tbody>
+                            <!--   for (Todo todo: todos) {  -->
+                            <c:forEach var="user" items="${listUser}">
 
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box dark-bg">
-              <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-             
-              <div class="title">Students</div>
-               <div class="count">4</div>
+                                <tr>
+                                    <td>
+                                        <c:out value="${user.sub_id}" />
+                                    </td>
+                                    <td>
+                                        <c:out value="${user.sub_name}" />
+                                    </td>
+                                   
+                                    <td><a href="edit?sub_id=<c:out value='${user.sub_id}' />"class="btn btn-info">Edit</a> &nbsp;&nbsp; <a href="delete?sub_id=<c:out value='${user.sub_id}' />" class="btn btn-danger">Delete</a></td>
+                                </tr>
+                            </c:forEach>
+                            <!-- } -->
+                        </tbody>
+
+         </table>
+                </div>
+                 <div class="container text right">
+                 <img alt="img" src="img/subjects.png" style="height:250px; width:650px" align="right"><br></br>
             </div>
-            <!--/.info-box-->
-          </div>
-          <!--/.col-->
-
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="info-box green-bg">
-              <i class="fa fa-users" aria-hidden="true"></i>
-              
-              <div class="title">Registered Users</div>
-              <div class="count">4</div>
+               
             </div>
-            <!--/.info-box-->
-          </div>
-          <!--/.col-->
-
-        </div>
+       
         <!--/.row-->
 
 

@@ -10,7 +10,7 @@ public class DBconnection {
     Connection con = null;
     String url = "jdbc:mysql://localhost:3306/e_learning_system";
     String username = "root";
-    String password = "Supriya12345#";
+    String password = "root";
  
     try
     {
@@ -22,7 +22,7 @@ public class DBconnection {
         {
             e.printStackTrace();
         }
-        con = DriverManager.getConnection(url, username, password);
+        con = DriverManager.getConnection(url,"root","root");
         System.out.println("Post establishing a DB connection - "+con);
     }
     catch (SQLException e)
