@@ -46,7 +46,7 @@
       </div>
 
       <!--logo start-->
-      <a href="#" class="logo"> <span class="lite">Welcome  <%=session.getAttribute("Admin") %></span></a>
+      <a href="#" class="logo"> <span class="lite">Welcome  <%=session.getAttribute("uname") %></span></a>
       <!--logo end-->
 
         

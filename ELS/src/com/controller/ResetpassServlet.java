@@ -1,6 +1,7 @@
 package com.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,7 +37,7 @@ public class ResetpassServlet extends HttpServlet {
 			request.setAttribute("msg", "Confirm password does not match with new password");
 			getServletContext().getRequestDispatcher("/resetpwd.jsp").forward(request, response);		
 		}
-		else if(!password.equals("opwd")) {
+		else if(!password.equals(opwd)) {
 			request.setAttribute("msg", "Old password is not correct!");
 			getServletContext().getRequestDispatcher("/resetpwd.jsp").forward(request, response);	
 		}

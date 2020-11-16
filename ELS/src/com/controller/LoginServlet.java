@@ -41,9 +41,10 @@ public class LoginServlet extends HttpServlet {
 	            System.out.println("Admin's Home");
 	 
 	            HttpSession session = request.getSession(); //Creating a session
-	            session.setAttribute("Admin", user_id); //setting session attribute
+	            session.setAttribute("uname", user_id); //setting session attribute
+	            session.setAttribute("pwd", password);
 	            request.setAttribute("userName", user_id);
-	 
+	            
 	            request.getRequestDispatcher("/adminDashboard.jsp").forward(request, response);
 	        }
 	        else if(userValidate.equals("Lecturer_Role"))

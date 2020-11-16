@@ -67,7 +67,7 @@
 
   <div class="container">
   <span style="color:red"><h4 bgcolor="green">${msg}</h4></span>
-    <form  name="passform" class="login-form" action="ResetPassServlet" onkeyup="return passwordChanged()" onsubmit=" return pwdvalid()">
+    <form  name="passform" class="login-form" action="<%=request.getContextPath()%>/ResetpassServlet" method="post" onkeyup="return passwordChanged()" onsubmit=" return pwdvalid()">
       <div class="login-wrap">
       <div class="text-center">
         <p class="login-img"><i class="icon_lock-open"></i><h3><b><i>Change Password</i></b></h3></p>
