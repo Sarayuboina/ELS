@@ -1,6 +1,7 @@
 package com.DBconnection;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -46,6 +47,23 @@ public class LoginDao {
 	        e.printStackTrace();
 	    }
 	    return "Invalid user credentials";
+	}
+
+	public static int resetpass(LoginBean lb, String sql) {
+		int i=0;
+		Connection con = null;
+		 con = DBconnection.createConnection();
+		 
+		 try {
+			PreparedStatement ps=con.prepareStatement(sql);
+			ps.setString(1, lb.getPassword());
+			ps.setString(2,lb.getUser_id());
+			i=ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return i;
 	}
 }
 

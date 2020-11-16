@@ -164,7 +164,7 @@
                       </a>
             </li>
           <li>
-            <a class="" href="resetpwd.html">
+            <a class="" href="resetpwd.jsp">
                           <i class=" icon_key"></i>
                           <span>Change Password</span>
                       </a>

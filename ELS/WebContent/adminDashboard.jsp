@@ -126,7 +126,7 @@
          
          
           <li >
-            <a href="resetpwd.html" class="">
+            <a href="resetpwd.jsp" class="">
                           <i class="icon_key_alt"></i>
                           <span>Change password</span>
                       </a>

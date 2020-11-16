@@ -129,7 +129,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
-          <li class="active">
+          <li>
             <a class="" href="lecturer.jsp">
                         <i class="fas fa-chalkboard-teacher"></i>
                           <span>Lecturer Dashboard</span>
@@ -144,7 +144,7 @@
                       </a>
             </li>
          
-         <li >
+         <li  class="active" >
             <a href="#" class="">
                           <i class="icon_document_alt"></i>
                           <span>Classes</span>
@@ -207,21 +207,27 @@
               <header class="panel-heading">
                 List of Classes!
               </header>
+              
+              <header>
+           <div class="text-center" style="display:flex; justify-content:flex-end; width:100%; padding:0;"><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" >Create Class</button>
+              </div>
+              </header>
+              
               <table class="table">
                 <thead>
                   <tr>
                     <th>Class_id</th>
                     <th>Class_Name</th>
                     <th>operations</th>
-                    
-                  </tr>
+                   </tr> 
                 </thead>
+                
         </table>
             </section>
           </div>
           </div>
               
-    <div class="text-center" style="display:flex; justify-content:flex-end; width:100%; padding:0;"><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" >Create Class</button></div>
+   
                <div class="container p-3 my-3 border" >
                <!-- The Modal -->
   <div class="modal" id="myModal">

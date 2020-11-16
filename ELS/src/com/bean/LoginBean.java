@@ -3,6 +3,8 @@ package com.bean;
 public class LoginBean {
  private String user_id;
  private String password;
+ 	
+	
 public String getUser_id() {
 	return user_id;
 }
