@@ -46,7 +46,7 @@
       </div>
 
       <!--logo start-->
-      <a href="#" class="logo"> <span class="lite">Welcome  <%=request.getAttribute("userName") %></span></a>
+      <a href="#" class="logo"> <span class="lite">Welcome  <%=session.getAttribute("Admin") %></span></a>
       <!--logo end-->
 
         
@@ -167,9 +167,9 @@
 
                 
                     <div class="container text-left">
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                     <a href="<%=request.getContextPath()%>/new"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
                      Add Standard
-                    </button>
+                    </button></a>&nbsp;&nbsp;
                     
                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
