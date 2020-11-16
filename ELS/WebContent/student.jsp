@@ -155,7 +155,7 @@
             </li>
           <li>
 
-            <a class="resetpwd.html" href="resetpwd.html" >
+            <a class="resetpwd.html" href="resetpwd.jsp" >
                           <i class=" icon_key"></i>
                           <span>Change Password</span>
                       </a>
@@ -191,7 +191,6 @@
         </div>
 
                 <!-- project team & activity end -->
-
       </section>
       <div class="text-right">
         <div class="credits">

@@ -176,11 +176,10 @@
                                   <div class="modal-content">
                                     <div class="modal-header">
                                          
-                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                              </button>
+                                              
                                      </div>
                                      <div class="modal-body">
+                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                        <form action="<%=request.getContextPath()%>/SaveStandard" method="post">
                                             <div class="input-group">
                                              <span class="input-group-addon"><b>Subject Name: </b><i class="icon_document_alt"></i></span>

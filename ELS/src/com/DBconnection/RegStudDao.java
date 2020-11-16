@@ -38,6 +38,7 @@ public class RegStudDao {
      catch(SQLException e)
      {
         e.printStackTrace();
+        System.out.println("error!!!");
      }       
      return "Oops.. Something went wrong there..!";  // On failure
 
@@ -61,7 +62,7 @@ public class RegStudDao {
 	         if (j!=0) {
 	         //Just to ensure data has been inserted into the database{
 	    
-	        	 System.out.println("Success");
+	        
 	             return "SUCCESS1";}
 		}
 	         catch(SQLException e)
