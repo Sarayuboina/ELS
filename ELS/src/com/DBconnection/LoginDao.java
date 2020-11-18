@@ -51,12 +51,12 @@ public class LoginDao {
 
 	public static int resetpass(LoginBean lb, String sql) {
 		int i=0;
-		Connection con = null;
-		 con = DBconnection.createConnection();
+		Connection con1 = null;
+		 con1 = DBconnection.createConnection();
 		 
 		 try {
-			PreparedStatement ps=con.prepareStatement(sql);
-			ps.setString(1, lb.getPassword());
+			PreparedStatement ps=con1.prepareStatement(sql);
+			ps.setString(1,lb.getPassword());
 			ps.setString(2,lb.getUser_id());
 			i=ps.executeUpdate();
 		} catch (SQLException e) {

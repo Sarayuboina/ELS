@@ -66,7 +66,7 @@
 <body class="login-img3-body">
 
   <div class="container">
-  <span style="color:red"><h4 bgcolor="green">${msg}</h4></span>
+  <span class="text-center" style="color:red;bg-color:green"><h4>${msg}</h4></span>
     <form  name="passform" class="login-form" action="<%=request.getContextPath()%>/ResetpassServlet" method="post" onkeyup="return passwordChanged()" onsubmit=" return pwdvalid()">
       <div class="login-wrap">
       <div class="text-center">

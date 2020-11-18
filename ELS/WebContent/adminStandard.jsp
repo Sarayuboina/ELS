@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -155,7 +156,7 @@
           <div class="col-lg-12">
             <h3 class="page-header"><i class="icon_document_alt"></i>Standard</h3>
             <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="admindashboard.html">Home</a></li>
+              <li><i class="fa fa-home"></i><a href="adminDashboard.jsp">Home</a></li>
               <li><i class="icon_document_alt"></i>Standard</li>
             </ol>
           </div>
@@ -167,9 +168,9 @@
 
                 
                     <div class="container text-left">
-                     <a href="<%=request.getContextPath()%>/new"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
                      Add Standard
-                    </button></a>&nbsp;&nbsp;
+                    </button>&nbsp;&nbsp;
                     
                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -180,25 +181,39 @@
                                      </div>
                                      <div class="modal-body">
                                       <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                       <form action="<%=request.getContextPath()%>/SaveStandard" method="post">
+                                      <c:if test="${user == null}">
+                                               <form action="insertstandard" method="post">
+                                      </c:if>
+                                      
+                                      
+                        <caption>
+                            <h2>
+                                
+                                <c:if test="${user == null}">
+                                    Add Standard
+                                </c:if>
+                            </h2>
+                        </caption>
                                             <div class="input-group">
                                              <span class="input-group-addon"><b>Standard Name: </b><i class="icon_document_alt"></i></span>
-                                               <input type="text" class="form-control" id="sname" placeholder="standard name" name="sname" autofocus required>
+                                               <input type="text" class="form-control" id="standard_name" placeholder="standard name" value="<c:out value='${user.standard_name}'/>" name="standard_name" autofocus required>
                                             </div>
-                                       </form>
+                                       
                                           
 
-                        <!-- <a href="<%=request.getContextPath()%>/new"  class="btn btn-success">Add
-     Standard</a>&nbsp;-->
-                    </div>
-                    <div class="modal-footer">
+                      
+                    
+                <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="submit" class="btn btn-primary">Add</button>
+                      <button type="submit" class="btn btn-primary">Add</button>/>
+                     
+                   </div>
       </div>
     </div>
   </div>
 </div>
 </div>
+
 
                     <br>
         <div class="col-sm-9">
@@ -230,7 +245,7 @@
                                         <c:out value="${user.standard_name}" />
                                     </td>
                                    
-                                    <td><a href="edit?standard_id=<c:out value='${user.standard_id}' />"class="btn btn-info">Edit</a> &nbsp;&nbsp; <a href="delete?standard_id=<c:out value='${user.standard_id}' />" class="btn btn-danger">Delete</a></td>
+                                    <td> <a href="deletestandard?standard_id=<c:out value='${user.standard_id}' />" class="btn btn-danger">Delete</a></td>
                                 </tr>
                             </c:forEach>
                             <!-- } -->
