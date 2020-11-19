@@ -181,22 +181,12 @@
                                      </div>
                                      <div class="modal-body">
                                       <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                      <c:if test="${user == null}">
-                                               <form action="insertstandard" method="post">
-                                      </c:if>
-                                      
-                                      
-                        <caption>
-                            <h2>
-                                
-                                <c:if test="${user == null}">
-                                    Add Standard
-                                </c:if>
-                            </h2>
-                        </caption>
+                                     
+                                               <form action="insertstandard" method="post" scope="request">
+                                 
                                             <div class="input-group">
                                              <span class="input-group-addon"><b>Standard Name: </b><i class="icon_document_alt"></i></span>
-                                               <input type="text" class="form-control" id="standard_name" placeholder="standard name" value="<c:out value='${user.standard_name}'/>" name="standard_name" autofocus required>
+                                               <input type="text" class="form-control" id="standard_name" placeholder="standard name"  name="standard_name" autofocus required>
                                             </div>
                                        
                                           
@@ -206,7 +196,7 @@
                 <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                       <button type="submit" class="btn btn-primary">Add</button>/>
-                     
+                 
                    </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -103,7 +104,7 @@
                       </a>
           </li>
           <li class="active">
-            <a class="#" href="">
+            <a class="#" href="listSub">
                           <i class="icon_book_alt"></i>
                           <span>Subjects</span>
                       </a>
@@ -169,7 +170,7 @@
                     <div class="container text-left">
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
                      Add Subject
-                    </button>
+                    </button>&nbsp;&nbsp;
                     
                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -180,12 +181,12 @@
                                      </div>
                                      <div class="modal-body">
                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                       <form action="<%=request.getContextPath()%>/SaveStandard" method="post">
+                                       <form action="<%=request.getContextPath()%>/insertsub" method="post">
                                             <div class="input-group">
                                              <span class="input-group-addon"><b>Subject Name: </b><i class="icon_document_alt"></i></span>
-                                               <input type="text" class="form-control" id="subname" placeholder="subject name" name="subname" autofocus required>
+                                               <input type="text" class="form-control" id="sub_name" placeholder="subject name" name="sub_name" autofocus required>
                                             </div>
-                                       </form>
+                                       
                                           
 
                         <!-- <a href="<%=request.getContextPath()%>/new"  class="btn btn-success">Add
@@ -230,7 +231,7 @@
                                         <c:out value="${user.sub_name}" />
                                     </td>
                                    
-                                    <td><a href="edit?sub_id=<c:out value='${user.sub_id}' />"class="btn btn-info">Edit</a> &nbsp;&nbsp; <a href="delete?sub_id=<c:out value='${user.sub_id}' />" class="btn btn-danger">Delete</a></td>
+                                    <td><a href="delete?sub_id=<c:out value='${user.sub_id}' />" class="btn btn-danger">Delete</a></td>
                                 </tr>
                             </c:forEach>
                             <!-- } -->

@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -263,7 +265,7 @@ function validatingName() {
         Designed by <a href="https://bootstrapmade.com/">ELS</a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+ </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 

@@ -29,5 +29,9 @@ public class RegLectBean {
 	public void setLect_pass(String lect_pass) {
 		this.lect_pass = lect_pass;
 	}
+	public void setPassword(String randomPassword) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
