@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
   <meta name="author" content="GeeksLabs">
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title> Admin Dashboard</title>
+  <title> Lecturer Dashboard</title>
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@
   <!-- Custom styles -->
  
   <link href="css/widgets.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style_lecturer.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet" />
   
   <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
@@ -35,47 +35,87 @@
     Author: BootstrapMade
     Author URL: https://bootstrapmade.com
   ======================================================= -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+  
+  
 </head>
+
 <body>
-<!-- container section start -->
+  <!-- container section start -->
   <section id="container" class="">
  
 
-    <header class="header dark-bg">
+    <header class="header">
       <div class="toggle-nav">
         <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
       </div>
 
       <!--logo start-->
-      <a href="#" class="logo"> <span class="lite">Welcome  <%=session.getAttribute("uname") %></span></a>
+      <a href="lecturerdashboard.html" class="logo"> <span class="lite">Welcome <%=session.getAttribute("uname") %></span></a>
       <!--logo end-->
+
 
         
       <div class="top-nav notification-row">
         <!-- notificatoin dropdown start-->
         <ul class="nav pull-right top-menu">
+        
+        
 
-            
-          <!-- alert notification end-->
+			<li id="task_notificatoin_bar" class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="fa fa-bell" aria-hidden="true"></i>
+                            <span class="badge bg-important">6</span>
+                        </a>
+            <ul class="dropdown-menu extended tasks-bar">
+              <div class="notify-arrow notify-arrow-blue"></div>
+              <li>
+                <p class="blue">You have 6 notifications!</p>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="task-info">
+                    <div class="desc">Please submit assignment!</div>
+                    
+                  </div>
+                 </a>
+              </li>
+             
+   
+          </ul>
+          </li>
+          
+          <li id="task_notificatoin_bar" class="dropdown">
+             <a href="#">
+             <div class="text-center"><button type="submit" class="btn btn-primary">Interaction</button></div>
+            </a> 
+             </li>
+             
+          
+                   <!-- alert notification end-->
+          
+          
           <!-- user login dropdown start-->
           <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
                                 <img alt="" src="">
                             </span>
-                            <span class="username">Admin</span>
+                            <span class="username">Lecturer</span>
                             <b class="caret"></b>
                         </a>
             <ul class="dropdown-menu extended logout">
               <div class="log-arrow-up"></div>
               <li class="eborder-top">
-                <a href=""><i class="icon_profile"></i> My Profile</a>
+                <a href="#"><i class="icon_profile"></i> My Profile</a>
               </li>
              <li>
-                <a href="<%=request.getContextPath()%>/LogoutServlet"><i class="fa fa-sign-out"></i> Log Out</a>
+                <a href="HomePage.jsp"><i class="icon_key_alt"></i> Log Out</a>
               </li>
               <li>
-                <a href=""><i class="icon_key_alt"></i> Documentation</a>
+                <a href="#"><i class="icon_key_alt"></i> Documentation</a>
               </li>
               </ul>
           </li>
@@ -91,58 +131,58 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
-          <li>
-            <a class="" href="adminDashboard.jsp">
-                          <i class="icon_house_alt"></i>
-                          <span>Admin Dashboard</span>
+          <li >
+            <a class="" href="lecturer.jsp">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                          <span>Lecturer Dashboard</span>
                       </a>
           </li>
-          <li >
-            <a class="#" href="listStndrd">
+          
+           <li class="active">
+            <a href="lecturer_category.jsp" class="">
+                          <i class=" icon_folder"></i>
+                          <span>Category</span>
+                          
+                      </a>
+            </li>
+         
+         <li >
+            <a href="lecturer_classes.jsp" class="">
                           <i class="icon_document_alt"></i>
                           <span>Classes</span>
                       </a>
           </li>
-          <li class="active">
-            <a class="#" href="listSub">
-                          <i class="icon_book_alt"></i>
-                          <span>Subjects</span>
-                      </a>
-          </li>
-          <li>
-            <a class="#" href="">
-                          <i class="icon_profile"></i>
-                          <span>Lecturers</span>
-                      </a>
-          </li>
           
-          <li>
+          
+          <li >
             <a href="#" class="">
-                          <i class="fa fa-graduation-cap"></i>
-                          <span>Students</span>
-                          
-                      </a>
-            </li>
-
-         
-         
-          <li >
-            <a href="resetpwd.jsp" class="">
-                          <i class="icon_key_alt"></i>
-                          <span>Change password</span>
+                          <i class="icon_folder-open"></i>
+                          <span>Materials</span>
                       </a>
           </li>
           <li >
-            <a href="<%=request.getContextPath()%>/LogoutServlet" class="">
-                          <i class="fa fa-sign-out"></i>
-                          <span>Logout</span>
+            <a href="#" class="">
+                          <i class="fa fa-bullhorn"></i>
+                          <span>Announcement</span>
                           
                       </a>
             </li>
-          
+          <li>
+            <a class="" href="resetpwd.jsp">
+                          <i class=" icon_key"></i>
+                          <span>Change Password</span>
+                      </a>
+          </li> 
+          <li>
+            <a class="" href="HomePage.jsp">
+                          <i class="fa fa-sign-out"></i>
+                          <span>Logout </span>
 
+                      </a>
 
-        </ul>
+          </li>
+
+                 </ul>
         <!-- sidebar menu end-->
       </div>
     </aside>
@@ -154,104 +194,39 @@
         <!--overview start-->
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="icon_book"></i>Subject</h3>
+            <h3 class="page-header"><i class="icon_folder"></i>Category</h3>
             <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="admindashboard.html">Home</a></li>
-              <li><i class="icon_book"></i>Subject</li>
+              <li><i class="fa fa-home"></i><a href="lecturer.jsp">Home</a></li>
+              <li><i class="icon_folder"></i>Category</li>
             </ol>
           </div>
         </div>
-
-          <!--/.col-->
-       <div class="row">
-                <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
-
-                
-                    <div class="container text-left">
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-                     Add Subject
-                    </button>&nbsp;&nbsp;
-                    
-                       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                         
-                                              
-                                     </div>
-                                     <div class="modal-body">
-                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                       <form action="<%=request.getContextPath()%>/insertsub" method="post">
-                                            <div class="input-group">
-                                             <span class="input-group-addon"><b>Subject Name: </b><i class="icon_document_alt"></i></span>
-                                               <input type="text" class="form-control" id="sub_name" placeholder="subject name" name="sub_name" autofocus required>
-                                            </div>
-                                       
-                                          
-
-                        <!-- <a href="<%=request.getContextPath()%>/new"  class="btn btn-success">Add
-     Standard</a>&nbsp;-->
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-                    <br>
-        <div class="col-sm-9">
+                 <!-- page start-->
+                 
+        <div class="row">
+          <div class="col-sm-9">
             <section class="panel">
               <header class="panel-heading">
-                List of Subjects
+                List of Categories!
               </header>
               <table class="table">
                 <thead>
                   <tr>
-                    <th>Subject_id</th>
-                    <th>Subject_name</th>
+                    <th>Category_id</th>
+                    <th>Category_Name</th>
                     <th>operation</th>
                     
                   </tr>
                 </thead>
-        
+        </table>
             </section>
           </div>
-                     <tbody>
-                            <!--   for (Todo todo: todos) {  -->
-                            <c:forEach var="user" items="${listUser}">
+          </div>
+              
+    
+      
 
-                                <tr>
-                                    <td>
-                                        <c:out value="${user.sub_id}" />
-                                    </td>
-                                    <td>
-                                        <c:out value="${user.sub_name}" />
-                                    </td>
-                                   
-                                    <td><a href="delete?sub_id=<c:out value='${user.sub_id}' />" class="btn btn-danger">Delete</a></td>
-                                </tr>
-                            </c:forEach>
-                            <!-- } -->
-                        </tbody>
-
-         </table>
-                </div>
-                 <div class="container text right">
-                 <img alt="img" src="img/subjects.png" style="height:250px; width:650px" align="right"><br></br>
-            </div>
-               
-            </div>
-       
-        <!--/.row-->
-
-
-        <!-- project team & activity end -->
-
-      </section>
-      <div class="text-right">
+                     <div class="text-right">
         <div class="credits">
           <!--
             All the links in the footer should remain intact.
@@ -328,6 +303,8 @@
       
     </script>
 
-
+  
 </body>
+
 </html>
+    

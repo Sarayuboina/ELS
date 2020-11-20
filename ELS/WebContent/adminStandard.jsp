@@ -47,7 +47,7 @@
       </div>
 
       <!--logo start-->
-      <a href="#" class="logo"> <span class="lite">Welcome  <%=session.getAttribute("Admin") %></span></a>
+      <a href="#" class="logo"> <span class="lite">Welcome  <%=session.getAttribute("uname") %></span></a>
       <!--logo end-->
 
         
@@ -98,13 +98,13 @@
                       </a>
           </li>
           <li class="active">
-            <a class="#" href="">
+            <a class="#" href="listStndrd">
                           <i class="icon_document_alt"></i>
                           <span>Classes</span>
                       </a>
           </li>
           <li>
-            <a class="#" href="adminSubjects.jsp">
+            <a class="#" href="listSub">
                           <i class="icon_book_alt"></i>
                           <span>Subjects</span>
                       </a>
@@ -127,7 +127,7 @@
          
          
           <li >
-            <a href="resetpwd.html" class="">
+            <a href="resetpwd.jsp" class="">
                           <i class="icon_key_alt"></i>
                           <span>Change password</span>
                       </a>

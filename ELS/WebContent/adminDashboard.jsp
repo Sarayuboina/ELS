@@ -97,13 +97,13 @@
                       </a>
           </li>
           <li>
-            <a class="" href="adminStandard.jsp">
+            <a class="" href="listStndrd">
                           <i class="icon_document_alt"></i>
                           <span>Classes</span>
                       </a>
           </li>
           <li>
-            <a class="#" href="">
+            <a class="#" href="listSub">
                           <i class="icon_book_alt"></i>
                           <span>Subjects</span>
                       </a>
@@ -155,7 +155,7 @@
           <div class="col-lg-12">
             <h3 class="page-header"><i class="fa fa-laptop"></i>Admin Dashboard</h3>
             <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="admindashboard.html">Home</a></li>
+              <li><i class="fa fa-home"></i><a href="adminDashboard.jsp">Home</a></li>
               <li><i class="fa fa-laptop"></i>Admin Dashboard</li>
             </ol>
           </div>

@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
   <meta name="author" content="GeeksLabs">
@@ -34,12 +35,15 @@
     Author: BootstrapMade
     Author URL: https://bootstrapmade.com
   ======================================================= -->
-  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
   
   
 </head>
+
 <body>
-<!-- container section start -->
+  <!-- container section start -->
   <section id="container" class="">
  
 
@@ -49,7 +53,7 @@
       </div>
 
       <!--logo start-->
-      <<a href="#" class="logo"> <span class="lite">Welcome <%=session.getAttribute("uname") %></span></a>
+      <a href="lecturer.jsp" class="logo"> <span class="lite">Welcome <%=session.getAttribute("uname")%></span></a>
       <!--logo end-->
 
 
@@ -108,7 +112,7 @@
                 <a href="#"><i class="icon_profile"></i> My Profile</a>
               </li>
              <li>
-                <a href="<%=request.getContextPath()%>/LogoutServlet"><i class="fa fa-sign-out"></i> Log Out</a>
+                <a href="HomePage.jsp"><i class="icon_key_alt"></i> Log Out</a>
               </li>
               <li>
                 <a href="#"><i class="icon_key_alt"></i> Documentation</a>
@@ -127,7 +131,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
-          <li class="active">
+          <li>
             <a class="" href="lecturer.jsp">
                         <i class="fas fa-chalkboard-teacher"></i>
                           <span>Lecturer Dashboard</span>
@@ -142,8 +146,8 @@
                       </a>
             </li>
          
-         <li >
-            <a href="lecturer_classes.jsp" class="">
+         <li  class="active" >
+            <a href="#" class="">
                           <i class="icon_document_alt"></i>
                           <span>Classes</span>
                       </a>
@@ -170,7 +174,7 @@
                       </a>
           </li> 
           <li>
-            <a class="" href="<%=request.getContextPath()%>/LogoutServlet">
+            <a class="" href="HomePage.jsp">
                           <i class="fa fa-sign-out"></i>
                           <span>Logout </span>
 
@@ -190,21 +194,42 @@
         <!--overview start-->
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-laptop"></i>lecturer Dashboard</h3>
+            <h3 class="page-header"><i class="icon_document_alt"></i>Classes</h3>
             <ol class="breadcrumb">
               <li><i class="fa fa-home"></i><a href="lecturer.jsp">Home</a></li>
-              <li><i class="fa fa-laptop"></i>lecturer Dashboard</li>
+              <li><i class="icon_folder"></i>Classes</li>
             </ol>
           </div>
         </div>
-
-                <!-- project team & activity end -->
-
-  <center>
-           <div class="container">
-                <img alt="img" src="assets-landing/img/slide/GettingStarted.png" style="height:380px; width:780px"><br></br>
+                 <!-- page start-->
+                 
+        <div class="row">
+          <div class="col-sm-9">
+            <section class="panel">
+              <header class="panel-heading">
+                List of Classes!
+              </header>
+              
+              <header>
+           <div class="text-center" style="display:flex; justify-content:flex-end; width:100%; padding:0;"><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" >Create Class</button>
+              </div>
+              </header>
+              
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Class_id</th>
+                    <th>Class_Name</th>
+                    <th>operations</th>
+                   </tr> 
+                </thead>
                 
-               <div class="text-center"><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create Class</button></div>
+        </table>
+            </section>
+          </div>
+          </div>
+              
+   
                <div class="container p-3 my-3 border" >
                <!-- The Modal -->
   <div class="modal" id="myModal">
@@ -263,19 +288,24 @@
                
                 </div>
                  </div>
-                     
-</div>              
- </center>
-   
-
-      </section>
-
+ 
       
-      
-      <div class="text-right">
+
+            
+            
+            
+            
+            
+         <div class="text-right">
+                    
         <div class="credits">
-          
-          Designed by <a href="#">ELS</a>
+          <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
+          -->
+          Designed by <a href="https://bootstrapmade.com/">ELS</a>
         </div>
       </div>
     </section>
@@ -346,4 +376,6 @@
 
   
 </body>
+
 </html>
+    
