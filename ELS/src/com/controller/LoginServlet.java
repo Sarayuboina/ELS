@@ -50,6 +50,7 @@ public class LoginServlet extends HttpServlet {
 	        else if(userValidate.equals("Lecturer_Role"))
 	        {
 	            System.out.println("Lecturer's Home");
+	            System.out.println("HELLO");
 	 
 	            HttpSession session = request.getSession();
 	            session.setAttribute("Lecturer", user_id);
