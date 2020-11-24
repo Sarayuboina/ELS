@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.DBconnection.RegLectDao;
-import com.DBconnection.RegStudDao;
 import com.bean.RegLectBean;
 import com.bean.RegStudBean;
 

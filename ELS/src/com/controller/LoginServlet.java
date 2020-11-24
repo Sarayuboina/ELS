@@ -27,7 +27,9 @@ public class LoginServlet extends HttpServlet {
 	    String password = request.getParameter("pwd");
 	    
 	 
-	    LoginBean loginBean = new LoginBean();
+	    int role_id = 0;
+		int login_id = 0;
+		LoginBean loginBean = new LoginBean(login_id, user_id, password, role_id);
 	    loginBean.setUser_id(user_id);
 	    loginBean.setPassword(password);
         LoginDao loginDao = new LoginDao();
@@ -53,7 +55,7 @@ public class LoginServlet extends HttpServlet {
 	            System.out.println("HELLO");
 	 
 	            HttpSession session = request.getSession();
-	            session.setAttribute("Lecturer", user_id);
+	            session.setAttribute("uname", user_id);
 	            request.setAttribute("userName", user_id);
 	 
 	            request.getRequestDispatcher("/lecturer.jsp").forward(request, response);
@@ -64,7 +66,7 @@ public class LoginServlet extends HttpServlet {
 	 
 	            HttpSession session = request.getSession();
 	            session.setMaxInactiveInterval(10*60);
-	            session.setAttribute("Student", user_id);
+	            session.setAttribute("uname", user_id);
 	            request.setAttribute("userName", user_id);
 	 
 	            request.getRequestDispatcher("/student.jsp").forward(request, response);

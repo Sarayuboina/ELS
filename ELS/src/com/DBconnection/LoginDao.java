@@ -65,5 +65,59 @@ public class LoginDao {
 		}
 		return i;
 	}
-}
+
+	public static LoginBean findByEmail(String email) {
+		// TODO Auto-generated method stub
+		LoginBean customer = null;
+		Connection con2 = null;
+		 con2 = DBconnection.createConnection();
+		
+		 ResultSet rs= null;
+		 try (
+			 PreparedStatement preparedStatement = con2.prepareStatement("SELECT * FROM login_credentials WHERE user_id = ?");) {
+				 preparedStatement.setString(1, email);
+				 rs = preparedStatement.executeQuery();
+				 while (rs.next()) {
+					    int login_id = rs.getInt("login_id");
+		                String user_id = rs.getString("user_id");
+		               
+		                String password = rs.getString("password");
+		       
+		                int role_id = rs.getInt("role_id");
+		              
+		                customer = new LoginBean(login_id,user_id,password,role_id);
+		            }
+			 }
+			 
+		         catch (SQLException e) {
+		            e.printStackTrace();;
+		        }
+		       
+				return customer;
+			 
+		 }
+		 
+		
+
+	public static boolean update(LoginBean customer) throws SQLException {
+		// TODO Auto-generated method stub
+		Connection con3 = null;
+		 con3 = DBconnection.createConnection();
+		 boolean rowUpdated;
+	        try (
+	            PreparedStatement statement = con3.prepareStatement("UPDATE login_credentials SET password = ? WHERE user_id = ?");) {
+	        	 statement.setString(1, customer.getPassword());
+		         statement.setString(2, customer.getUser_id());
+
+	            rowUpdated = statement.executeUpdate() > 0;
+	        }
+	       
+    return rowUpdated;
+		
+		
+	}
+
+	
+	}
+
 

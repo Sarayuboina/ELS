@@ -71,12 +71,7 @@ public class RegLectDao {
 
 
 }
-		public static void update(RegLectBean customer) {
-			// TODO Auto-generated method stub
+		
 			
-		}
-		public static RegLectBean findByEmail(String email) {
-			// TODO Auto-generated method stub
-			return null;
-		}
+		
 }

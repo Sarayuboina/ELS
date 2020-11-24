@@ -42,7 +42,9 @@ public class ResetpassServlet extends HttpServlet {
 			getServletContext().getRequestDispatcher("/resetpwd.jsp").forward(request, response);	
 		}
 		else {
-			LoginBean lb = new LoginBean();
+			int login_id = 0;
+			int role_id = 0;
+			LoginBean lb = new LoginBean(login_id, user_id, password, role_id);
 			lb.setUser_id(user_id);
 			lb.setPassword(npwd);	
 			
